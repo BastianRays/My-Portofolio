@@ -363,6 +363,55 @@
     }
     .mc-title { font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
     .mc-badge { font-size: .55rem; letter-spacing: .1em; text-transform: uppercase; padding: .15rem .5rem; background: rgba(232,0,13,.12); border-radius: 3px; color: var(--red); }
+
+    /* TikTok video cards */
+    .tt-cards {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    }
+    .tvc { background: var(--card); display: flex; flex-direction: column; }
+    .tvc-img {
+      width: 100%; aspect-ratio: 9/12; max-height: 340px;
+      background: #161616; position: relative; overflow: hidden;
+    }
+    .tvc-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tvc-img::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg,#161616,#1c1c1c,#141414);
+      z-index: 0;
+    }
+    .tvc-ph {
+      position: relative; z-index: 1;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
+    }
+    .tvc-ph-icon { width: 42px; height: 42px; border: 1.5px solid rgba(232,0,13,.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .tvc-ph-icon svg { width: 20px; height: 20px; stroke: rgba(232,0,13,.35); fill: none; stroke-width: 1.5; }
+    .tvc-ph-txt { font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.14); text-align: center; padding: 0 1rem; }
+    .tvc-date {
+      position: absolute; top: .8rem; left: .8rem; z-index: 2;
+      font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--white); background: rgba(0,0,0,.55); backdrop-filter: blur(6px);
+      padding: .3rem .7rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.1);
+    }
+    .tvc-best {
+      position: absolute; top: .8rem; right: .8rem; z-index: 2;
+      font-size: .57rem; letter-spacing: .12em; text-transform: uppercase;
+      color: #fff; background: var(--red);
+      padding: .3rem .7rem; border-radius: 999px;
+    }
+    .tvc-body { padding: 1.2rem 1.3rem; }
+    .tvc-metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: .7rem; margin-bottom: .9rem; }
+    .tvc-mv { font-family: var(--bebas); font-size: 1.35rem; letter-spacing: .04em; color: var(--white); line-height: 1; }
+    .tvc-mv.hi { color: var(--red); }
+    .tvc-mk { font-size: .55rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin-top: .15rem; }
+    .tvc-extra {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      padding-top: .8rem; border-top: 1px solid var(--border);
+      font-size: .68rem; color: var(--gray);
+    }
+    .tvc-extra b { color: var(--white); font-weight: 700; }
     .mc-body { padding: 1.1rem 1.4rem; display: grid; grid-template-columns: repeat(4,1fr); gap: .7rem; }
     .mv { font-family: var(--bebas); font-size: 1.45rem; letter-spacing: .04em; color: var(--white); line-height: 1; }
     .mv.hi { color: var(--red); }
@@ -477,6 +526,7 @@
       .h-vline { left: 1.5rem; }
       .svc-grid, .design-grid, .wr-grid { grid-template-columns: 1fr; }
       .tt-grid, .ct-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .tt-cards { grid-template-columns: 1fr; }
       .mc-body { grid-template-columns: repeat(2,1fr); }
       footer { padding: 2rem 1.5rem; }
       .f-logo, .f-copy { display: none; }
@@ -791,55 +841,114 @@
   <div class="s-rule"></div>
   <div class="s-label rv">Social Media</div>
   <div class="s-title rv">TIKTOK<br><span class="ol">STRATEGY</span></div>
-  <div class="tt-grid">
+
+  <div class="tt-grid" style="margin-bottom:3rem;">
     <div class="rv">
-      <p class="tt-desc">Driving massive reach and sales through strategic viral storytelling. Specializing in high-retention short-form content that converts hundreds of thousands of views into tangible affiliate sales and brand growth.</p>
-      <div class="tt-feats">
-        <div class="tt-feat">
-          <div class="tf-n">Viral Engineering</div>
-          <div class="tf-d">Creating high-hook content that consistently breaks through the TikTok algorithm, reaching 100K+ organic views per video.</div>
-        </div>
-        <div class="tt-feat">
-          <div class="tf-n">Affiliate Conversion Mastery</div>
-          <div class="tf-d">Optimizing product placements and psychological sales triggers to drive clicks and high-conversion results.</div>
-        </div>
-        <div class="tt-feat">
-          <div class="tf-n">Retention-Driven Editing</div>
-          <div class="tf-d">Utilizing advanced editing techniques to maximize watch time — ensuring content is both engaging and informative.</div>
-        </div>
-      </div>
+      <p class="tt-desc">Driving massive reach and sales through strategic viral storytelling. Specializing in high-retention short-form content that converts hundreds of thousands of views into tangible affiliate sales and brand growth — all from a single TikTok account.</p>
     </div>
-    <div class="mc-stack rv">
-      <div class="mc">
-        <div class="mc-head"><span class="mc-title">Account A — Dec 2025</span></div>
-        <div class="mc-body">
-          <div><div class="mv hi">259K</div><div class="mk">Video Views</div></div>
-          <div><div class="mv">1,312h</div><div class="mk">Total Play Time</div></div>
-          <div><div class="mv">18.0s</div><div class="mk">Avg Watch Time</div></div>
-          <div><div class="mv">17.89%</div><div class="mk">Watched Full</div></div>
-        </div>
+    <div class="rv tt-feats">
+      <div class="tt-feat">
+        <div class="tf-n">Viral Engineering</div>
+        <div class="tf-d">Creating high-hook content that consistently breaks through the TikTok algorithm, reaching 100K–500K+ organic views per video.</div>
       </div>
-      <div class="mc">
-        <div class="mc-head"><span class="mc-title">Account B — Jan 2026</span><span class="mc-badge">Best Performing</span></div>
-        <div class="mc-body">
-          <div><div class="mv hi">518K</div><div class="mk">Video Views</div></div>
-          <div><div class="mv">877h</div><div class="mk">Total Play Time</div></div>
-          <div><div class="mv">7.6s</div><div class="mk">Avg Watch Time</div></div>
-          <div><div class="mv">2.37%</div><div class="mk">Watched Full</div></div>
-        </div>
+      <div class="tt-feat">
+        <div class="tf-n">Affiliate Conversion Mastery</div>
+        <div class="tf-d">Optimizing product placements and psychological sales triggers to drive clicks and high-conversion results.</div>
       </div>
-      <div class="mc">
-        <div class="mc-head"><span class="mc-title">Account C — Nov 2025</span></div>
-        <div class="mc-body">
-          <div><div class="mv hi">185K</div><div class="mk">Video Views</div></div>
-          <div><div class="mv">951h</div><div class="mk">Total Play Time</div></div>
-          <div><div class="mv">17.8s</div><div class="mk">Avg Watch Time</div></div>
-          <div><div class="mv">18.53%</div><div class="mk">Watched Full</div></div>
-        </div>
+      <div class="tt-feat">
+        <div class="tf-n">Retention-Driven Editing</div>
+        <div class="tf-d">Utilizing advanced editing techniques to maximize watch time — ensuring content is both engaging and informative.</div>
       </div>
     </div>
   </div>
+
+  <!-- Video performance cards — ganti div.tvc-ph dengan <img src="..."> screenshot/thumbnail video -->
+  <div class="tt-cards rv">
+
+    <div class="tvc">
+      <div class="tvc-img">
+        <span class="tvc-date">Jan 15, 2026</span>
+        <span class="tvc-best">Best Performing</span>
+        <img src="Tiktok3.png" alt="Video Jan 15 2026">
+      </div>
+      <div class="tvc-body">
+        <div class="tvc-metrics">
+          <div><div class="tvc-mv hi">520K</div><div class="tvc-mk">Video Views</div></div>
+          <div><div class="tvc-mv">877h</div><div class="tvc-mk">Total Play Time</div></div>
+          <div><div class="tvc-mv">7.6s</div><div class="tvc-mk">Avg Watch Time</div></div>
+          <div><div class="tvc-mv">2.37%</div><div class="tvc-mk">Watched Full</div></div>
+        </div>
+        <div class="tvc-extra">
+          <span><b>6,295</b> Likes</span>
+          <span><b>243</b> Shares</span>
+          <span><b>69</b> New Followers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tvc">
+      <div class="tvc-img">
+        <span class="tvc-date">Dec 5, 2025</span>
+        <img src="Tiktok4.png" alt="Video Dec 5 2025">
+      </div>
+      <div class="tvc-body">
+        <div class="tvc-metrics">
+          <div><div class="tvc-mv hi">262K</div><div class="tvc-mk">Video Views</div></div>
+          <div><div class="tvc-mv">1,312h</div><div class="tvc-mk">Total Play Time</div></div>
+          <div><div class="tvc-mv">18.0s</div><div class="tvc-mk">Avg Watch Time</div></div>
+          <div><div class="tvc-mv">17.89%</div><div class="tvc-mk">Watched Full</div></div>
+        </div>
+        <div class="tvc-extra">
+          <span><b>17K</b> Likes</span>
+          <span><b>439</b> Shares</span>
+          <span><b>197</b> New Followers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tvc">
+      <div class="tvc-img">
+        <span class="tvc-date">Nov 10, 2025</span>
+        <img src="Tiktok2.png" alt="Video Nov 10 2025">
+      </div>
+      <div class="tvc-body">
+        <div class="tvc-metrics">
+          <div><div class="tvc-mv hi">186K</div><div class="tvc-mk">Video Views</div></div>
+          <div><div class="tvc-mv">951h</div><div class="tvc-mk">Total Play Time</div></div>
+          <div><div class="tvc-mv">17.8s</div><div class="tvc-mk">Avg Watch Time</div></div>
+          <div><div class="tvc-mv">18.53%</div><div class="tvc-mk">Watched Full</div></div>
+        </div>
+        <div class="tvc-extra">
+          <span><b>10K</b> Likes</span>
+          <span><b>233</b> Shares</span>
+          <span><b>207</b> New Followers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tvc">
+      <div class="tvc-img">
+        <span class="tvc-date">Oct 30, 2025</span>
+        <img src="Tiktok1.png" alt="Video Oct 30 2025">
+      </div>
+      <div class="tvc-body">
+        <div class="tvc-metrics">
+          <div><div class="tvc-mv hi">100K</div><div class="tvc-mk">Video Views</div></div>
+          <div><div class="tvc-mv">343h</div><div class="tvc-mk">Total Play Time</div></div>
+          <div><div class="tvc-mv">13.0s</div><div class="tvc-mk">Avg Watch Time</div></div>
+          <div><div class="tvc-mv">10.36%</div><div class="tvc-mk">Watched Full</div></div>
+        </div>
+        <div class="tvc-extra">
+          <span><b>5,186</b> Likes</span>
+          <span><b>257</b> Shares</span>
+          <span><b>56</b> New Followers</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 
 <!-- ════ QUOTE ════ -->
 <section id="about">
